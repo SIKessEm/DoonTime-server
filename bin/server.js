@@ -1,4 +1,5 @@
 const crypto = require('crypto')
+const helmet = require('helmet')
 
 const options = require('../cfg/options')
 const actions = require('../cfg/actions')
@@ -37,6 +38,7 @@ if(server.get('env') === 'production') {
 
 // Add middleware
 server.use(cors())
+server.use(helmet())
 server.use(express.static('res'))
 server.use(express.json())
 server.use(session(sessionHandle))
