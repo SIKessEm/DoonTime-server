@@ -1,5 +1,5 @@
-const options = require('../cfg/boot')
-const actions = require('../cfg/menu')
+const options = require('../cfg/options')
+const actions = require('../cfg/actions')
 
 const express = require('express')
 const server = express()
