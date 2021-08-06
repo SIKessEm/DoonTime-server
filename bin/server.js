@@ -39,10 +39,8 @@ server.use(express.json())
 server.use(session(sessionHandle))
 
 // Define routes
-server.use(actions.userRoutes)
-server.use(actions.usersRoutes)
-server.use(actions.taskRoutes)
-server.use(actions.tasksRoutes)
+server.use('/users', actions.userRoutes)
+server.use('/tasks', actions.taskRoutes)
 
 // Access the session as req.session
 server.get('/', function(req, res, next) {

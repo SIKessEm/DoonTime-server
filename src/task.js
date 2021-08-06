@@ -1,31 +1,39 @@
 
 
-// Create a task
-module.exports.create = async (req, res) => {
+// List tasks
+module.exports.list = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
   }
 }
 
-// Select a task
-module.exports.select = async (req, res) => {
+// Add a task
+module.exports.add = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
   }
 }
 
-// Update a task
-module.exports.update = async (req, res) => {
+// Get a task
+module.exports.get = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
   }
 }
 
-// Remove a task
-module.exports.remove = async (req, res) => {
+// Set a task
+module.exports.set = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
+// Unset a task
+module.exports.unset = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)

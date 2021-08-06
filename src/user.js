@@ -1,39 +1,39 @@
 
 
-// Create a user
-module.exports.create = async (req, res) => {
+// List users
+module.exports.list = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
   }
 }
 
-// Select a user
-module.exports.select = async (req, res) => {
+// Add a user
+module.exports.add = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
   }
 }
 
-// Update a user
-module.exports.update = async (req, res) => {
+// Get a user
+module.exports.get = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
   }
 }
 
-// Archive a user
-module.exports.archive = async (req, res) => {
+// Set a user
+module.exports.set = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
   }
 }
 
-// Remove a user
-module.exports.remove = async (req, res) => {
+// Unset a user
+module.exports.unset = async (req, res) => {
   try {
   } catch (error) {
     console.error(error.message)
