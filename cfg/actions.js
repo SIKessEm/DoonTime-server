@@ -4,7 +4,7 @@ const UserController = require('../src/user')
 const TaskController = require('../src/task')
 
 // Export users actions
-module.exports.userRoutes = express.Router()
+module.exports.userActions = express.Router()
   // Define user actions
   .get('/', UserController.list)
   .post('/', UserController.add)
@@ -13,7 +13,7 @@ module.exports.userRoutes = express.Router()
   .delete('/:id', UserController.unset)
 
 // Export possible actions on a task
-module.exports.taskRoutes = express.Router()
+module.exports.taskActions = express.Router()
   // Define possible actions on a task
   .get('/', TaskController.list)
   .post('/', TaskController.add)

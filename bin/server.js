@@ -1,6 +1,3 @@
-const crypto = require('crypto')
-const helmet = require('helmet')
-
 const options = require('../cfg/options')
 const actions = require('../cfg/actions')
 
@@ -12,6 +9,8 @@ const http_port = options.http_port
 const https_port = options.https_port
 
 const cors = require('cors')
+const helmet = require('helmet')
+const crypto = require('crypto')
 const session = require('express-session')
 
 const https = require('https')
@@ -44,8 +43,8 @@ server.use(express.json())
 server.use(session(sessionHandle))
 
 // Define routes
-server.use('/users', actions.userRoutes)
-server.use('/tasks', actions.taskRoutes)
+server.use('/users', actions.userActions)
+server.use('/tasks', actions.taskActions)
 
 // Access the session as req.session
 server.get('/', function(req, res, next) {
