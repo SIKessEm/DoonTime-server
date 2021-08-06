@@ -1,3 +1,5 @@
+const crypto = require('crypto')
+
 const options = require('../cfg/options')
 const actions = require('../cfg/actions')
 
@@ -24,7 +26,7 @@ const sessionHandle = {
     maxAge: 60000,
   },
   genid: function(req) {
-    return genuuid() // use UUIDs for session IDs
+    return crypto.randomBytes(16).toString("hex") // use UUIDs for session IDs
   }
 }
 
