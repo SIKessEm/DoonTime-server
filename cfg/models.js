@@ -6,9 +6,22 @@ const sequelize = new Sequelize(`${options.database_dialect}://${options.databas
 const UserStructure = require('../def/user')
 const TaskStructure = require('../def/task')
 
-module.exports.User = sequelize.define('User', UserStructure)
-module.exports.Task = sequelize.define('Task', TaskStructure)
+const User = sequelize.define('User', UserStructure)
+const Task = sequelize.define('Task', TaskStructure)
+
+User.hasMany(Task, {
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+})
+
+Task.belongsTo(User, {
+  as: 'Author',
+  through: 'UserTasks'
+})
 
 (async () => {
   await sequelize.sync()
 })()
+
+module.exports.UserModel = User
+module.exports.TaskModel = Task
