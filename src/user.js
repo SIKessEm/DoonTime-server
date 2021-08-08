@@ -1,10 +1,20 @@
 const { body, validationResult } = require('express-validator')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const User = require('../res/models/user')
+const { User } = require('../res/models')
 
 // List users
 module.exports.list = async (req, res) => {
+  try {
+    const users = await User.findAll()
+    res.json(users)
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
+// Add a user
+module.exports.add = async (req, res) => {
   User.findOne({
     where: {
       name: req.body.name
@@ -51,14 +61,6 @@ module.exports.list = async (req, res) => {
       message: 'Something went wrong'
     })
   })
-}
-
-// Add a user
-module.exports.add = async (req, res) => {
-  try {
-  } catch (error) {
-    console.error(error.message)
-  }
 }
 
 // Get a user
