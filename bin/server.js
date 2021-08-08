@@ -38,7 +38,7 @@ if(server.get('env') === 'production') {
 // Add middleware
 server.use(cors())
 server.use(helmet())
-server.use(express.static('res'))
+server.use(express.static('cgi'))
 server.use(express.json())
 server.use(session(sessionHandle))
 
