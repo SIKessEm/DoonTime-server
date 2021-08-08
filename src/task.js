@@ -1,3 +1,4 @@
+const Task = require('../res/models/task')
 
 
 // List tasks

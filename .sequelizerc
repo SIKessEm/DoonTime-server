@@ -1,0 +1,9 @@
+require("babel-register");
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('cfg', 'dbenv.js'),
+  'models-path': path.resolve('res', 'models'),
+  'seeders-path': path.resolve('res', 'seeders'),
+  'migrations-path': path.resolve('res', 'migrations')
+}
