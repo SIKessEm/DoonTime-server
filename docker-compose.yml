@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  fs:
+    container_name: doontime_fs
+    build: ./
+    restart: always
+    depends_on:
+      - db
+    links:
+      - db:db
+    ports:
+      - 8080:8080
+      - 8443:8443
+    networks:
+      - server
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    command: npm start
+
+  db:
+    container_name: doontime_db
+    image: postgres:13.4
+    restart: always
+    ports:
+      - 5432:5432
+    networks:
+      - server
+    mem_limit: 512m
+    volumes:
+      - db_data:/var/lib/postgres/data
+    environment:
+      POSTGRES_PASSWORD: B!=4444B
+      POSTGRES_USER: sikessem
+      POSTGRES_DB: doontime
+      PGDATA: /var/lib/postgres/data
+    command: postgres -c max_connections=300 -c log_min_messages=LOG -p 5432
+
+networks:
+  server:
+
+volumes:
+  db_data: {}
