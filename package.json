@@ -4,7 +4,7 @@
     "description": "The server side of DoonTime",
     "main": "bin/server.js",
     "scripts": {
-        "server": "nodemon bin/server"
+        "start": "node cli/server.js"
     },
     "repository": {
         "type": "git",
