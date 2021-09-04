@@ -1,4 +1,4 @@
-require("babel-register");
+sequire("babel-register");
 const path = require('path');
 
 module.exports = {
